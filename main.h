@@ -1,21 +1,25 @@
-#ifndef PRINTF_H
+#ifndef PRINTF
 #define PRINTF_H
 #include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 int _printf(const char *format, ...);
+int (*check_specifier(const char*))(va_list);
 /**
- * struct format - Data type of a format
- * @op: Format.
- * @f: Function
+ * struct func - struct for specifier to printer
+ * @t: character to compare
+ * @f: function
  */
-typedef struct format
+typedef struct func
 {
-	char *op;
-	int (*f)(va_list print);
-	
-} MyPrint;
-int _putchar(char c);
-int op_char(va_list form);
-int op_string(va_list form);
-int op_percent(va_list form);
-int validator(const char *format, va_list print1, MyPrint *ops1);
+	char *t;
+	int (*f)(va_list);
+} func_t;
+int print_char(va_list);
+int print_string(va_list);
+int print_percent(va_list);
+int print_int(va_list);
+int print_decimal(va_list);
+
 #endif
