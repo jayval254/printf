@@ -1,11 +1,11 @@
-#ifndef PRINTF
+#ifndef PRINTF_H
 #define PRINTF_H
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 int _printf(const char *format, ...);
-int (*check_specifier(const char*))(va_list);
+int (*check_specifier(const char *))(va_list);
 /**
  * struct func - struct for specifier to printer
  * @t: character to compare

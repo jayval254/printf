@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0, count = 0, value = 0;
 	va_list args;
+
 	va_start(args, format);
 	int (*f)(va_list);
 
@@ -19,7 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			value = write(1,&format[i],1);
+			value = write(1, &format[i], 1);
 			count = count + value;
 			i++;
 			continue;
