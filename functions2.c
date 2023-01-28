@@ -15,6 +15,7 @@ int op_rot13(va_list form)
 
 	char x[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
 	char y[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j <= 53; j++)
@@ -54,11 +55,11 @@ int op_binary(va_list form)
 	}
 	i--;
 	while (i >= 0)
-		{
-			_putchar(bin[i] + '0');
-			count++;
-			i--;
-		}
+	{
+		_putchar(bin[i] + '0');
+		count++;
+		i--;
+	}
 	return (count);
 }
 /**

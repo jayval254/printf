@@ -54,6 +54,7 @@ int  op_reverse(va_list form)
 int op_character(va_list form)
 {
 	int length_c = 0;
+
 	length_c = _putchar(va_arg(form, int));
 	return (length_c);
 }
